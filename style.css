@@ -1,0 +1,162 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+#up {
+  position: absolute;
+  right: 55%;
+  top: 0;
+  height: 500px;
+  width: 500px;
+  background-image: linear-gradient(
+    80deg,
+    rgb(172, 71, 113, 0.2),
+    rgb(0, 0, 8,.5)
+  );
+  border-radius: 50%;
+  filter: blur(50px);
+  animation: down 20s infinite;
+}
+#down {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  height: 700px;
+  width: 700px;
+  background-image: linear-gradient(
+    80deg,
+    rgb(172, 172, 71, 0.2),
+    rgb(0, 0, 8,.5)
+  );
+  border-radius: 50%;
+  filter: blur(50px);
+  animation: up 30s infinite;
+}
+#left {
+  position: absolute;
+  left: 0;
+  top: 40%;
+  height: 500px;
+  width: 500px;
+  background-image: linear-gradient(
+    80deg,
+    rgb(39, 33, 119, 0.3),
+    rgb(0, 0, 8, 0.5)
+  );
+  border-radius: 50%;
+  filter: blur(50px);
+  animation: right 25s infinite;
+}
+#right {
+  position: absolute;
+  right: 0;
+  bottom: 40%;
+  height: 500px;
+  width: 500px;
+  background-image: linear-gradient(80deg, rgb(85, 172, 71, 0.3), rgb(0, 0, 8,0.5));
+  border-radius: 50%;
+  filter: blur(50px);
+  animation: left 35s infinite;
+}
+
+@keyframes down {
+  0%,
+  100% {
+    top: -100px;
+  }
+
+  70% {
+    top: 500px;
+  }
+}
+@keyframes up {
+  0%,
+  100% {
+    bottom: -100px;
+  }
+
+  70% {
+    bottom: 500px;
+  }
+}
+@keyframes right {
+  0%,
+  100% {
+    left: -100px;
+  }
+
+  70% {
+    left: 1300px;
+  }
+}
+@keyframes left {
+  0%,
+  100% {
+    right: -100px;
+  }
+
+  70% {
+    right: 1300px;
+  }
+}
+
+#main {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(60deg, rgb(23, 68, 65), rgb(27, 21, 10));
+}
+
+.frame span {
+  cursor: pointer;
+  height: 5vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 5vw;
+  font-weight: 700;
+  font-size: 4vw;
+  transform: translateY(-5vw);
+  /* background-color: yellow; */
+}
+
+.frame span p:first-child {
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: thin white;
+  transition: all 0.5s ease-in;
+}
+.frame span p:first-child:hover {
+  font-weight: 600;
+  -webkit-text-fill-color: white;
+  text-shadow: 2px 5px 10px #000;
+}
+
+.frame {
+  position: absolute;
+  overflow: hidden;
+  height: 5vw;
+  /* background-color: powderblue; */
+  z-index: 999;
+}
+
+#circle {
+  z-index: 998;
+  height: 2vw;
+  width: 2vw;
+  background-image: linear-gradient(50deg, rgb(57, 16, 16), rgb(12, 134, 148));
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
